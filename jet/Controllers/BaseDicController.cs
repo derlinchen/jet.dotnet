@@ -3,7 +3,7 @@
 namespace jet.Controllers
 {
 
-    [Route("[controller]")]
+    [Route("jet/[controller]")]
     [ApiController]
     public class BaseDicController : ControllerBase
     {
