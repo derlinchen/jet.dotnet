@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "nzIPrWYv5TScxolbbBIa/7qjYagG3lGoMi9yhN+j4Duu+7t0jcjNfBWJ6TMLtU3cXgk2Xlvluk6uONgIK5rLFw==",
+  "success": true,
+  "projectFilePath": "E:\\Source\\C#\\jet\\jet\\jet.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Derlin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Derlin\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Derlin\\.nuget\\packages\\swashbuckle.aspnetcore\\6.3.1\\swashbuckle.aspnetcore.6.3.1.nupkg.sha512",
+    "C:\\Users\\Derlin\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.3.1\\swashbuckle.aspnetcore.swagger.6.3.1.nupkg.sha512",
+    "C:\\Users\\Derlin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.3.1\\swashbuckle.aspnetcore.swaggergen.6.3.1.nupkg.sha512",
+    "C:\\Users\\Derlin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.3.1\\swashbuckle.aspnetcore.swaggerui.6.3.1.nupkg.sha512"
+  ],
+  "logs": []
+}
