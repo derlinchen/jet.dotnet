@@ -1,5 +1,11 @@
-﻿using jet.Filters;
+﻿using jet.Config;
+using jet.Filters;
+using jet.Repository;
+using jet.Repository.interfaces;
+using jet.Service;
+using jet.Service.interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace jet
 {
@@ -16,12 +22,21 @@ namespace jet
         {
             services.AddLogging();
             services.AddSwaggerGen();
+
+            services.AddDbContext<EFCoreContext>(options => options.UseMySql(Configuration.GetConnectionString("MysqlConnection"), MySqlServerVersion.LatestSupportedServerVersion));
+
             services.AddControllers(ops =>
             {
                 //添加过滤器
                 ops.Filters.Add(new ResultFilter());
                 ops.Filters.Add(new ServiceFilterAttribute(typeof(ExceptionFilter)));
             });
+
+            //添加repository注入
+            services.AddTransient<IBaseDicRepository, BaseDicRepository>();
+            //添加service注入
+            services.AddTransient<IBaseDicService, BaseDicService>();
+
             services.AddScoped<ExceptionFilter>();
         }
 
