@@ -13,9 +13,9 @@ namespace jet.Service
             _baseDicRepository = baseDicRepository;
         }
 
-        public BaseDic Get(string id)
+        public BaseDic GetById(string id)
         {
-            return _baseDicRepository.GetById(id);
+            return _baseDicRepository.GetById(id);  
         }
     }
 }

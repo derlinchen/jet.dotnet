@@ -21,7 +21,7 @@ namespace jet.Controllers
         public IActionResult Get()
         {
             string id = "1122";
-            var result = _baseDicService.Get(id);
+            var result = _baseDicService.GetById(id);
             return Ok(result);
         }
 

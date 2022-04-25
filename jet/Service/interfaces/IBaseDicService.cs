@@ -4,6 +4,6 @@ namespace jet.Service.interfaces
 {
     public interface IBaseDicService
     {
-        BaseDic Get(string id);
+        BaseDic GetById(string id);
     }
 }

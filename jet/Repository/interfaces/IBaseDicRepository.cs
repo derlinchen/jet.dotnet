@@ -2,8 +2,8 @@
 
 namespace jet.Repository.interfaces
 {
-    public interface IBaseDicRepository : IRepository<BaseDic>
+    public interface IBaseDicRepository
     {
-
+        BaseDic GetById(string id);
     }
 }
