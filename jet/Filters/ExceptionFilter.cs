@@ -25,7 +25,6 @@ namespace jet.Filters
             if (jetExp == false)
             {
                 _logger.LogError(context.Exception, context.Exception.Message);
-                context.HttpContext.Response.StatusCode = 500;
             }
             base.OnException(context);
         }

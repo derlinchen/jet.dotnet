@@ -1,4 +1,5 @@
-﻿using jet.Service.interfaces;
+﻿using jet.Bean.dto;
+using jet.Service.interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace jet.Controllers
@@ -14,6 +15,13 @@ namespace jet.Controllers
         public BaseDicController(IBaseDicService baseDicService)
         {
             _baseDicService = baseDicService;
+        }
+
+
+        [HttpPost("saveBaseDic")]
+        public void SaveBaseDic([FromBody] BaseDicDto item)
+        {
+            _baseDicService.SaveBaseDic(item);
         }
 
 

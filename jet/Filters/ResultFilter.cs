@@ -8,6 +8,14 @@ namespace jet.Filters
     {
         public override void OnResultExecuting(ResultExecutingContext context)
         {
+            if (context.Result is EmptyResult) {
+                context.Result = new ObjectResult(new ResponseBean
+                {
+                    Code = "200",
+                    Message = "操作成功",
+                    Data = null
+                });
+            }
             if (context.Result is ObjectResult result)
             {
                 if (result.Value is ResponseBean)
@@ -18,7 +26,7 @@ namespace jet.Filters
                 context.Result = new ObjectResult(new ResponseBean
                 {
                     Code = "200",
-                    Message = string.Empty,
+                    Message = "操作成功",
                     Data = result.Value
                 });
             }

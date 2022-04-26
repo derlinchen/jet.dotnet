@@ -1,7 +1,10 @@
-﻿namespace jet.Bean
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace jet.Bean
 {
     public class BaseBean
     {
-        public string id { get; set; }
+        [Column("id")]
+        public string? Id { get; set; }
     }
 }
