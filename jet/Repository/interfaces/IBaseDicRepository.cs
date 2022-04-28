@@ -6,7 +6,8 @@ namespace jet.Repository.interfaces
     {
         void SaveBaseDic(BaseDic baseDic);
 
+        void DeleteById(string id);
 
-        BaseDic GetById(string id);
+        void UpdateBaseDic(BaseDic baseDic);
     }
 }

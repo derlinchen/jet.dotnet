@@ -3,10 +3,12 @@
 namespace jet.Bean.model
 {
     [Table("base_dic")]
-    public class BaseDic :BaseBean
+    public class BaseDic
     {
-        
+        [Column("id")]
+        public string Id { get; set; }
+
         [Column("name")]
-        public string? Name { get; set; }
+        public string Name { get; set; }
     }
 }

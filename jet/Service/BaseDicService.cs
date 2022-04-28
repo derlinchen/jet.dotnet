@@ -23,10 +23,15 @@ namespace jet.Service
         }
 
 
-
-        public BaseDic GetById(string id)
+        public void DeleteById(string id)
         {
-            return _baseDicRepository.GetById(id);
+            _baseDicRepository.DeleteById(id);
+        }
+
+        public void UpdateBaseDic(BaseDicDto item)
+        {
+            BaseDic baseDic = BeanUtils<BaseDicDto,BaseDic>.Trans(item);
+            _baseDicRepository.UpdateBaseDic(baseDic);
         }
     }
 }

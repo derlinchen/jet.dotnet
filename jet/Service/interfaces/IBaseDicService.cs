@@ -7,7 +7,7 @@ namespace jet.Service.interfaces
     {
         void SaveBaseDic(BaseDicDto item);
 
-
-        BaseDic GetById(string id);
+        void DeleteById(string id);
+        void UpdateBaseDic(BaseDicDto item);
     }
 }

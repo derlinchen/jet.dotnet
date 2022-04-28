@@ -1,7 +1,7 @@
 ﻿using jet.Bean.model;
 using jet.Config;
 using jet.Repository.interfaces;
-
+using jet.Utils;
 using Microsoft.EntityFrameworkCore;
 
 namespace jet.Repository
@@ -21,11 +21,20 @@ namespace jet.Repository
             _dbContext.SaveChanges();
         }
 
-
-        public BaseDic GetById(string id)
+        public void DeleteById(string id)
         {
-            return _dbContext.Set<BaseDic>().FromSqlRaw("select * from base_dic where id = ?", id).Single();
+            _dbContext.Database.ExecuteSqlRaw("delete from base_dic where id = ?", id);
         }
 
+        public void UpdateBaseDic(BaseDic baseDic)
+        {
+            BaseDic baseDicItem = _dbContext.Set<BaseDic>().FromSqlRaw("select * from base_dic where id = ?", baseDic.Id).First();
+            if (baseDicItem != null)
+            {
+                baseDicItem.Name = baseDic.Name;
+                _dbContext.SaveChanges();
+            }
+
+        }
     }
 }

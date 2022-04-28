@@ -1,7 +1,9 @@
 ﻿namespace jet.Bean.dto
 {
-    public class BaseDicDto : BaseBean
+    public class BaseDicDto
     {
-        public string? Name { get; set; }
+        public string Id { get; set; }
+
+        public string Name { get; set; }
     }
 }

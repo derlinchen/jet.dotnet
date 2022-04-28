@@ -24,21 +24,20 @@ namespace jet.Controllers
             _baseDicService.SaveBaseDic(item);
         }
 
-
-        [HttpGet("get")]
-        public IActionResult Get()
+        [HttpDelete("deleteById")]
+        public void DeleteById(string id)
         {
-            string id = "1122";
-            var result = _baseDicService.GetById(id);
-            return Ok(result);
+            _baseDicService.DeleteById(id);
         }
 
-        [HttpGet]
-        public string Index() => "Welecome to .NetCore";
+        [HttpPost("updateBaseDic")]
+        public void UpdateBaseDic([FromBody] BaseDicDto item)
+        {
+            _baseDicService.UpdateBaseDic(item);
+        }
 
 
-        [HttpGet("num")]
-        public int Num() => 10;
+ 
 
     }
 }
