@@ -1,4 +1,5 @@
 ﻿using jet.Bean.model;
+using jet.Bean.vo;
 using Microsoft.EntityFrameworkCore;
 
 namespace jet.Config
@@ -9,6 +10,7 @@ namespace jet.Config
         {
         }
 
-        public DbSet<BaseDic> BaseDics { get; set; }
+        public DbSet<BaseDic> BaseDic { get; set; }
+        public DbSet<BaseDicVo> BaseDicVo { get; set; }
     }
 }

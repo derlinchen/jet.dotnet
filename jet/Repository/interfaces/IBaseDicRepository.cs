@@ -1,13 +1,16 @@
-﻿using jet.Bean.model;
+﻿using jet.Bean.dto;
+using jet.Bean.model;
+using jet.Bean.vo;
 
 namespace jet.Repository.interfaces
 {
     public interface IBaseDicRepository
     {
-        void SaveBaseDic(BaseDic baseDic);
+        void SaveItem(BaseDic baseDic);
 
-        void DeleteById(string id);
+        void DeleteItemById(string id);
 
-        void UpdateBaseDic(BaseDic baseDic);
+        void UpdateItem(BaseDic baseDic);
+        List<BaseDicVo> GetBaseDicList(BaseDicDto item);
     }
 }

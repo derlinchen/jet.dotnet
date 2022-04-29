@@ -1,4 +1,5 @@
 ﻿using jet.Bean.dto;
+using jet.Bean.vo;
 using jet.Service.interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -24,10 +25,10 @@ namespace jet.Controllers
             _baseDicService.SaveBaseDic(item);
         }
 
-        [HttpDelete("deleteById")]
-        public void DeleteById(string id)
+        [HttpDelete("deleteBaseDic")]
+        public void DeleteBaseDic(string id)
         {
-            _baseDicService.DeleteById(id);
+            _baseDicService.DeleteBaseDic(id);
         }
 
         [HttpPost("updateBaseDic")]
@@ -36,8 +37,16 @@ namespace jet.Controllers
             _baseDicService.UpdateBaseDic(item);
         }
 
+        [HttpPost("getBaseDicList")]
+        public List<BaseDicVo> GetBaseDicList([FromBody] BaseDicDto item)
+        {
+            return _baseDicService.GetBaseDicList(item);
+        }
+
 
  
+
+
 
     }
 }

@@ -1,5 +1,5 @@
 ﻿using jet.Bean.dto;
-using jet.Bean.model;
+using jet.Bean.vo;
 
 namespace jet.Service.interfaces
 {
@@ -7,7 +7,10 @@ namespace jet.Service.interfaces
     {
         void SaveBaseDic(BaseDicDto item);
 
-        void DeleteById(string id);
+        void DeleteBaseDic(string id);
+
         void UpdateBaseDic(BaseDicDto item);
+
+        List<BaseDicVo> GetBaseDicList(BaseDicDto item);
     }
 }
