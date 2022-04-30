@@ -8,7 +8,7 @@ namespace jet.Repository.interfaces
 		void SaveItem(BaseDic item);
 		void DeleteItemById(string id);
 		void UpdateItem(BaseDic item);
-		BaseDicVo GetBaseDic(string id);
+		BaseDicVo? GetBaseDic(string id);
 		List<BaseDicVo> GetBaseDicList(BaseDicDto item);
 		PageInfo<BaseDicVo> SearchBaseDic(PageSearch<BaseDicDto> item);
 	}

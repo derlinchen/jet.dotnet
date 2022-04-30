@@ -34,7 +34,7 @@ namespace jet.Repository
 				_dbContext.SaveChanges();
 			}
 		}
-		public BaseDicVo GetBaseDic(string id)
+		public BaseDicVo? GetBaseDic(string id)
 		{
 			BaseDicVo? result = _dbContext.Set<BaseDicVo>().FromSqlRaw("select * from base_dic").SingleOrDefault(x => x.Id == id);
 			return result;

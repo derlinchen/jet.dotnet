@@ -34,7 +34,7 @@ namespace jet.Controllers
 		}
 
 		[HttpGet("getBaseDic")]
-		public BaseDicVo GetBaseDic(string id)
+		public BaseDicVo? GetBaseDic(string id)
 		{
 			return _baseDicService.GetBaseDic(id);
 		}

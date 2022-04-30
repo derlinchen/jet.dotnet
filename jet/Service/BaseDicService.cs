@@ -27,7 +27,7 @@ namespace jet.Service
 			BaseDic baseDic = BeanUtils<BaseDicDto, BaseDic>.Trans(item);
 			_baseDicRepository.UpdateItem(baseDic);
 		}
-		public BaseDicVo GetBaseDic(string id)
+		public BaseDicVo? GetBaseDic(string id)
 		{
 			BaseDicVo? result = _baseDicRepository.GetBaseDic(id);
 			return result;

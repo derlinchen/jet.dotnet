@@ -8,7 +8,7 @@ namespace jet.Service.interfaces
 		void SaveBaseDic(BaseDicDto item);
 		void DeleteBaseDic(string id);
 		void UpdateBaseDic(BaseDicDto item);
-		BaseDicVo GetBaseDic(string id);
+		BaseDicVo? GetBaseDic(string id);
 		List<BaseDicVo> GetBaseDicList(BaseDicDto item);
 		PageInfo<BaseDicVo> SearchBaseDic(PageSearch<BaseDicDto> item);
 	}
