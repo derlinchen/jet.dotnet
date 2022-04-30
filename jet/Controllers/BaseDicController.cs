@@ -18,7 +18,6 @@ namespace jet.Controllers
             _baseDicService = baseDicService;
         }
 
-
         [HttpPost("saveBaseDic")]
         public void SaveBaseDic([FromBody] BaseDicDto item)
         {
@@ -55,8 +54,5 @@ namespace jet.Controllers
             return _baseDicService.SearchBaseDic(item);
         }
  
-
-
-
     }
 }
