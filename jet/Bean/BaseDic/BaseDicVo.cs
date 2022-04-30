@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace jet.Bean.vo
+namespace jet.Bean.BaseDic
 {
     public class BaseDicVo
     {

@@ -1,5 +1,5 @@
-﻿using jet.Bean.dto;
-using jet.Bean.vo;
+﻿using jet.Bean;
+using jet.Bean.BaseDic;
 
 namespace jet.Service.interfaces
 {
@@ -12,5 +12,6 @@ namespace jet.Service.interfaces
         void UpdateBaseDic(BaseDicDto item);
 
         List<BaseDicVo> GetBaseDicList(BaseDicDto item);
+        PageInfo<BaseDicVo> SearchBaseDic(PageSearch<BaseDicDto> item);
     }
 }

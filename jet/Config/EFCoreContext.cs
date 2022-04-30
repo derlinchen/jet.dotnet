@@ -1,5 +1,4 @@
-﻿using jet.Bean.model;
-using jet.Bean.vo;
+﻿using jet.Bean.BaseDic;
 using Microsoft.EntityFrameworkCore;
 
 namespace jet.Config

@@ -1,5 +1,5 @@
-﻿using jet.Bean.dto;
-using jet.Bean.vo;
+﻿using jet.Bean;
+using jet.Bean.BaseDic;
 using jet.Service.interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -43,7 +43,11 @@ namespace jet.Controllers
             return _baseDicService.GetBaseDicList(item);
         }
 
-
+        [HttpPost("searchBaseDic")]
+        public PageInfo<BaseDicVo> SearchBaseDic([FromBody] PageSearch<BaseDicDto> item)
+        {
+            return _baseDicService.SearchBaseDic(item);
+        }
  
 
 

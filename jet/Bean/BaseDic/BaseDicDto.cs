@@ -1,4 +1,4 @@
-﻿namespace jet.Bean.dto
+﻿namespace jet.Bean.BaseDic
 {
     public class BaseDicDto
     {

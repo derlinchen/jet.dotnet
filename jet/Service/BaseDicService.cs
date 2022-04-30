@@ -1,6 +1,5 @@
-﻿using jet.Bean.dto;
-using jet.Bean.model;
-using jet.Bean.vo;
+﻿using jet.Bean;
+using jet.Bean.BaseDic;
 using jet.Repository.interfaces;
 using jet.Service.interfaces;
 using jet.Utils;
@@ -38,6 +37,11 @@ namespace jet.Service
         public List<BaseDicVo> GetBaseDicList(BaseDicDto item)
         {
             return _baseDicRepository.GetBaseDicList(item);
+        }
+
+        public PageInfo<BaseDicVo> SearchBaseDic(PageSearch<BaseDicDto> item)
+        {
+            return _baseDicRepository.SearchBaseDic(item);
         }
     }
 }

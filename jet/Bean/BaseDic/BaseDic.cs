@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace jet.Bean.model
+namespace jet.Bean.BaseDic  
 {
     [Table("base_dic")]
     public class BaseDic

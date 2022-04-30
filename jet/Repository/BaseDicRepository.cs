@@ -1,8 +1,9 @@
-﻿using jet.Bean.dto;
-using jet.Bean.model;
-using jet.Bean.vo;
+﻿using jet.Bean;
+using jet.Bean.BaseDic;
 using jet.Config;
+using jet.exceptions;
 using jet.Repository.interfaces;
+using jet.Utils;
 using Microsoft.EntityFrameworkCore;
 
 namespace jet.Repository
@@ -51,6 +52,60 @@ namespace jet.Repository
                 queryable = queryable.Where(x => x.Name == item.Name);
             }
             List<BaseDicVo> result = queryable.ToList();
+            return result;
+        }
+
+        public PageInfo<BaseDicVo> SearchBaseDic(PageSearch<BaseDicDto> item)
+        {
+            BaseDicDto? queryCondition = item.Item;
+            if(item.PageSize <= 0)
+            {
+                throw new JetException("请输入正确的每页条数");
+            }
+
+            if(item.PageNum <= 0)
+            {
+                item.PageNum = 1;
+            }
+            PageInfo<BaseDicVo> result = new PageInfo<BaseDicVo>();
+
+            var countQueryable = _dbContext.Set<BaseDic>().AsQueryable();
+            if(queryCondition != null)
+            {
+                if (queryCondition.Id != null && queryCondition.Id != "")
+                {
+                    countQueryable = countQueryable.Where(x => x.Id == queryCondition.Id);
+                }
+
+                if (queryCondition.Name != null && queryCondition.Name != "")
+                {
+                    countQueryable = countQueryable.Where(x => x.Name == queryCondition.Name);
+                }
+            }
+
+            int total = countQueryable.Count();
+
+
+            var resultQueryable = _dbContext.Set<BaseDicVo>().FromSqlRaw("select * from base_dic");
+            if (queryCondition != null)
+            {
+                if (queryCondition.Id != null && queryCondition.Id != "")
+                {
+                    resultQueryable = resultQueryable.Where(x => x.Id == queryCondition.Id);
+                }
+
+                if (queryCondition.Name != null && queryCondition.Name != "")
+                {
+                    resultQueryable = resultQueryable.Where(x => x.Name == queryCondition.Name);
+                }
+            }
+            List<BaseDicVo> lists = resultQueryable.Skip((item.PageNum - 1) * item.PageSize).Take(item.PageSize).ToList();
+
+            result.PageNum = item.PageNum;
+            result.PageSize = item.PageSize;
+            result.Total = total;
+            result.PageCount = DbUtils.CalcPageCount(total, item.PageSize);
+            result.Lists = lists;
             return result;
         }
     }
