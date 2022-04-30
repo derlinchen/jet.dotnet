@@ -36,7 +36,8 @@ namespace jet.Service
 
         public BaseDicVo GetBaseDic(string id)
         {
-            return _baseDicRepository.GetBaseDic(id);
+            BaseDicVo ? result = _baseDicRepository.GetBaseDic(id);
+            return result;
         }
 
         public List<BaseDicVo> GetBaseDicList(BaseDicDto item)
