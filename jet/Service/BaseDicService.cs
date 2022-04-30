@@ -30,8 +30,13 @@ namespace jet.Service
 
         public void UpdateBaseDic(BaseDicDto item)
         {
-            BaseDic baseDic = BeanUtils<BaseDicDto,BaseDic>.Trans(item);
+            BaseDic baseDic = BeanUtils<BaseDicDto, BaseDic>.Trans(item);
             _baseDicRepository.UpdateItem(baseDic);
+        }
+
+        public BaseDicVo GetBaseDic(string id)
+        {
+            return _baseDicRepository.GetBaseDic(id);
         }
 
         public List<BaseDicVo> GetBaseDicList(BaseDicDto item)
@@ -43,5 +48,6 @@ namespace jet.Service
         {
             return _baseDicRepository.SearchBaseDic(item);
         }
+
     }
 }

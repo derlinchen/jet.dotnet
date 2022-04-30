@@ -10,7 +10,11 @@ namespace jet.Repository.interfaces
         void DeleteItemById(string id);
 
         void UpdateItem(BaseDic baseDic);
+
+        BaseDicVo GetBaseDic(string id);
+
         List<BaseDicVo> GetBaseDicList(BaseDicDto item);
         PageInfo<BaseDicVo> SearchBaseDic(PageSearch<BaseDicDto> item);
+     
     }
 }

@@ -39,15 +39,21 @@ namespace jet.Repository
 
         }
 
+        public BaseDicVo GetBaseDic(string id)
+        {
+            BaseDicVo result = _dbContext.Set<BaseDicVo>().FromSqlRaw("select * from base_dic").Single(x => x.Id == id);
+            return result;
+        }
+
         public List<BaseDicVo> GetBaseDicList(BaseDicDto item)
         {
             var queryable = _dbContext.Set<BaseDicVo>().FromSqlRaw<BaseDicVo>("select * from base_dic");
-            if(item.Id != null && item.Id !="")
+            if (item.Id != null && item.Id != "")
             {
                 queryable = queryable.Where(x => x.Id == item.Id);
             }
 
-            if(item.Name != null && item.Name != "")
+            if (item.Name != null && item.Name != "")
             {
                 queryable = queryable.Where(x => x.Name == item.Name);
             }
@@ -58,19 +64,19 @@ namespace jet.Repository
         public PageInfo<BaseDicVo> SearchBaseDic(PageSearch<BaseDicDto> item)
         {
             BaseDicDto? queryCondition = item.Item;
-            if(item.PageSize <= 0)
+            if (item.PageSize <= 0)
             {
                 throw new JetException("请输入正确的每页条数");
             }
 
-            if(item.PageNum <= 0)
+            if (item.PageNum <= 0)
             {
                 item.PageNum = 1;
             }
             PageInfo<BaseDicVo> result = new PageInfo<BaseDicVo>();
 
             var countQueryable = _dbContext.Set<BaseDic>().AsQueryable();
-            if(queryCondition != null)
+            if (queryCondition != null)
             {
                 if (queryCondition.Id != null && queryCondition.Id != "")
                 {
@@ -108,5 +114,7 @@ namespace jet.Repository
             result.Lists = lists;
             return result;
         }
+
+
     }
 }

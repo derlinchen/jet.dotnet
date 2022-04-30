@@ -37,6 +37,12 @@ namespace jet.Controllers
             _baseDicService.UpdateBaseDic(item);
         }
 
+        [HttpGet("getBaseDic")]
+        public BaseDicVo GetBaseDic(string id)
+        {
+            return _baseDicService.GetBaseDic(id);
+        }
+
         [HttpPost("getBaseDicList")]
         public List<BaseDicVo> GetBaseDicList([FromBody] BaseDicDto item)
         {

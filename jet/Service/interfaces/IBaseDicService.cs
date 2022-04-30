@@ -11,7 +11,11 @@ namespace jet.Service.interfaces
 
         void UpdateBaseDic(BaseDicDto item);
 
+        BaseDicVo GetBaseDic(string id);
+
         List<BaseDicVo> GetBaseDicList(BaseDicDto item);
+
         PageInfo<BaseDicVo> SearchBaseDic(PageSearch<BaseDicDto> item);
+
     }
 }

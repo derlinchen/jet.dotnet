@@ -9,7 +9,7 @@ namespace jet.Config
         {
         }
 
-        public DbSet<BaseDic> BaseDic { get; set; }
-        public DbSet<BaseDicVo> BaseDicVo { get; set; }
+        public DbSet<BaseDic> ? BaseDic { get; set; }
+        public DbSet<BaseDicVo> ? BaseDicVo { get; set; }
     }
 }
