@@ -14,6 +14,7 @@ namespace jet.Repository.interfaces
         BaseDicVo GetBaseDic(string id);
 
         List<BaseDicVo> GetBaseDicList(BaseDicDto item);
+
         PageInfo<BaseDicVo> SearchBaseDic(PageSearch<BaseDicDto> item);
      
     }
