@@ -3,19 +3,13 @@ using jet.Bean.BaseDic;
 
 namespace jet.Service.interfaces
 {
-    public interface IBaseDicService
-    {
-        void SaveBaseDic(BaseDicDto item);
-
-        void DeleteBaseDic(string id);
-
-        void UpdateBaseDic(BaseDicDto item);
-
-        BaseDicVo GetBaseDic(string id);
-
-        List<BaseDicVo> GetBaseDicList(BaseDicDto item);
-
-        PageInfo<BaseDicVo> SearchBaseDic(PageSearch<BaseDicDto> item);
-
-    }
+	public interface IBaseDicService
+	{
+		void SaveBaseDic(BaseDicDto item);
+		void DeleteBaseDic(string id);
+		void UpdateBaseDic(BaseDicDto item);
+		BaseDicVo GetBaseDic(string id);
+		List<BaseDicVo> GetBaseDicList(BaseDicDto item);
+		PageInfo<BaseDicVo> SearchBaseDic(PageSearch<BaseDicDto> item);
+	}
 }
