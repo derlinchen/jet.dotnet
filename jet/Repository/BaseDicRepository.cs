@@ -29,8 +29,16 @@ namespace jet.Repository
 			BaseDic baseDicItem = _dbContext.Set<BaseDic>().FromSqlRaw<BaseDic>("select * from base_dic").Where(x => x.Id == item.Id).First();
 			if (baseDicItem != null)
 			{
-				baseDicItem.Id = item.Id;
-				baseDicItem.Name = item.Name;
+				if (item.Id != null && item.Id != "")
+				{
+                    baseDicItem.Id = item.Id;
+				}
+
+				if (item.Name != null && item.Name != "")
+				{
+					baseDicItem.Name = item.Name;
+				}
+
 				_dbContext.SaveChanges();
 			}
 		}
