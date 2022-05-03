@@ -8,7 +8,7 @@ namespace jet.Service
 {
 	public class BaseDicService : IBaseDicService
 	{
-		private IBaseDicRepository _baseDicRepository;
+		private readonly IBaseDicRepository _baseDicRepository;
 		public BaseDicService(IBaseDicRepository baseDicRepository)
 		{
 			_baseDicRepository = baseDicRepository;

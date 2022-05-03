@@ -72,7 +72,7 @@ namespace jet.Repository
 			{
 				item.PageNum = 1;
 			}
-			PageInfo<BaseDicVo> result = new PageInfo<BaseDicVo>();
+			PageInfo<BaseDicVo> result = new();
 			var countQueryable = _dbContext.Set<BaseDic>().AsQueryable();
 			if (queryCondition != null)
 			{
